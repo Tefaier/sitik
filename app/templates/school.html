@@ -1,0 +1,12 @@
+{% extends "basis.html" %}
+
+{% block context %}
+<div>
+    <a href="{{ url_for('logout') }}" style="font-size: 3rem;">Выход из аккаунта</a>
+</div>
+<h1>School {{school.name}}</h1>
+    {% for group in school.groups %}
+    <div><br><a class="clas" href="{{url_for('index2', id = group.id)}}" style="font-size: 2rem;">{{group.name}}</a></div>
+    {% endfor %}
+{% endblock %}
+<!--<div><br><button type="button" id='{{ class.id }}'>{{ class.name }}</button></div>-->

@@ -1,0 +1,27 @@
+{% extends "basis.html" %}
+
+{% block context %}
+<div>
+    <a href="{{ url_for('index1') }}" style="font-size: 3rem;">Назад к списку классов</a>
+</div>
+<h1>Class {{groupq.name}}</h1>
+    <form action="" method="post" novalidate>
+    {% for student in groupq.students %}
+    <div class="input-group data_phone"><div class="input-group-prepend data_phone" style="font-size: 2rem; width: 30%;">
+        <span id={{student.id}} style="font-size: 2rem; width: 100%" class="input-group-text data_phone">{{student.name}}</span>
+    </div>
+        {% if time==1 %}
+        <input type="number" placeholder="Измерение 1" name={{student.id+0.1}} style="font-size: 2rem;" oninput="Value_check(this)" aria-label="temp" class="form-control data_phone">
+        {% elif time==2 %}
+        <input type="number" placeholder="Измерение 2" name={{student.id+0.1}} style="font-size: 2rem;" oninput="Value_check(this)" aria-label="temp" class="form-control data_phone">
+        {% elif time==3 %}
+        <input type="number" placeholder="Измерение 3" name={{student.id+0.1}} style="font-size: 2rem;" oninput="Value_check(this)" aria-label="temp" class="form-control data_phone">
+        {% else %}
+
+        {% endif %}
+    </div>
+    {% endfor %}
+        <p class="loging"><input type="submit" name="subm" style="background-color: green; font-size: 2rem; margin-left: auto; margin-right: auto; text-align: center; margin-top: 30px;" value="Дополнить данные"/></p>
+        <div style=" font-size: 2rem; margin-left: auto; margin-right: auto; text-align: center; margin-top: 30px;"><a href="{{ url_for('report', id=groupq.id) }}">Соcтавить отчет</a></div>
+    </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "basis.html" %}
+
+{% block context %}
+    <p class="loging"><img src="{{ url_for('static', filename='profile.png') }}" border="2" class="loging"></p>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p class="loging" >
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+        </p>
+        <p class="loging">
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+        </p>
+        <p class="loging"><input type="submit" name="subm" value="Войти"/></p>
+
+    </form>
+{% endblock %}
