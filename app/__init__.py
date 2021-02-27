@@ -12,3 +12,4 @@ login = LoginManager(app)
 login.login_view = 'index'
 
 from app import routes, models
+

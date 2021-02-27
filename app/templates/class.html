@@ -22,6 +22,6 @@
     </div>
     {% endfor %}
         <p class="loging"><input type="submit" name="subm" style="background-color: green; font-size: 2rem; margin-left: auto; margin-right: auto; text-align: center; margin-top: 30px;" value="Дополнить данные"/></p>
-        <div style=" font-size: 2rem; margin-left: auto; margin-right: auto; text-align: center; margin-top: 30px;"><a href="{{ url_for('report', id=groupq.id) }}">Соcтавить отчет</a></div>
+        <div style=" font-size: 2rem; margin-left: auto; margin-right: auto; text-align: center; margin-top: 30px;"><a href="{{ url_for('report', id=groupq.id) }}?_tmp={{now}}">Соcтавить отчет</a></div>
     </form>
 {% endblock %}
