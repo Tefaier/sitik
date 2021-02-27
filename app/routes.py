@@ -32,7 +32,8 @@ def index1():  # school
 @app.route('/report/<int:id>', methods=['GET'])
 @login_required
 def report(id):  # report
-    sql = db.session.query(Metric, Student).filter(Student.group_id == id).join(Student).statement
+    sql = db.session.query(Metric, Student).join(Student).statement
+    #sql = db.session.query(Metric, Student).filter(Student.group_id == id).join(Student).statement
     # sql = db.session.query(Metric, Student).filter(Metric.student.group.id==id, Student.group_id==id).join(Student).statement
     data = pd.read_sql(sql, db.engine)
     df_1 = pd.DataFrame([], columns=['Имя', 'Первое измерение', 'Второе измерение', 'Третье измерение'])
