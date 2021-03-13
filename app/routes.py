@@ -88,7 +88,7 @@ def index2(id):  # class
 def index2(id):  # class
     group1 = Group.query.get(id)
     if request.method == 'POST':
-        if request.form['subm'] == 'Дополнить данные':
+        if request.form['subm'] == 'Сохранить':
             num = num_of_metrics(group1)
             if num<3:
                 for student in group1.students:
