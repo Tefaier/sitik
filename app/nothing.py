@@ -2,9 +2,9 @@ from app import db
 from app.models import *
 import os
 
-school1 = School(name="toruteva_309_11", password="abcdef321")
-school2 = School(name="luk_419_10201", password="shaof9081")
-school3 = School(name="kodirova_625", password="star77tap")
+school1 = School(name="toruteva_309_11", password="abcdef321")#6Г
+school2 = School(name="luk_419_10201", password="shaof9081")  #10Э
+school3 = School(name="kodirova_625", password="star77tap")   #5Г
 db.session.add(school1)
 db.session.add(school2)
 db.session.add(school3)
